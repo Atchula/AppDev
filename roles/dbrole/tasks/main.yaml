@@ -8,13 +8,21 @@
     state: started
     enabled : yes
 
-- name : Install MySQL Client
-  ansible.builtin.dnf :
-   name : mysql
+- name : Install PyMysql Client
+  ansible.builtin.pip :
+   name : "{{item}}"
    state : latest
+   executable : pip3.9
+  loop :
+   - PyMySQL
+   - cryptography
 
 - name : Connect MySQL Server
-  ansible.builtin.shell : "mysql -h {{hostname}} -u{{mysqluser}} -p{{mysqlpassword}}"
+  community.mysql.mysql_info : 
+  login_user : "{{mysqluser}}"
+  login_password : "{{mysqlpassword}}"
+  login_host :  "{{hostname}}"
+  filter : version
   register : SqlStatus
   ignore_erros : yes
 
