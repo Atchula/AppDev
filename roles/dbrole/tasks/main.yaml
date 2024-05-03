@@ -16,7 +16,7 @@
 - name : Connect MySQL Server
   ansible.builtin.command : "mysql -h {{hostname}} -u{{mysqluser}} -p{{mysqlpassword}}"
   register : SqlStatus
-  ignore_eroors : yes
+  ignore_erros : yes
 
 - name : Print SqlStatus
   ansible.builtin.debug:
