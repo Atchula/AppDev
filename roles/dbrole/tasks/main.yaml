@@ -28,4 +28,4 @@
 
 - name : Set Root Password
   ansible.builtin.command: "mysql_secure_installation --set-root-pass {{mysqlpassword}}"
-  when SqlStatus[failed] is true
+  when: SqlStatus[failed] is true
