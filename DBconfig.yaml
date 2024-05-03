@@ -1,4 +1,6 @@
 - name : Configure Database
   hosts : db
+  vars_files :
+   - cred.yaml
   roles :
    - dbrole 
