@@ -1,0 +1,4 @@
+- name : Configure Database
+  hosts : db
+  roles :
+   - dbrole 
