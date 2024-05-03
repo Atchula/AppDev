@@ -19,10 +19,10 @@
 
 - name : Connect MySQL Server
   community.mysql.mysql_info : 
-  login_user : "{{mysqluser}}"
-  login_password : "{{mysqlpassword}}"
-  login_host :  "{{hostname}}"
-  filter : version
+   login_user : "{{mysqluser}}"
+   login_password : "{{mysqlpassword}}"
+   login_host :  "{{hostname}}"
+   filter : version
   register : SqlStatus
   ignore_erros : yes
 
