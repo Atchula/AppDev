@@ -24,7 +24,7 @@
    login_host :  "{{hostname}}"
    filter : version
   register : SqlStatus
-  ignore_erros : true
+  ignore_errors : true
 
 - name : Print SqlStatus
   ansible.builtin.debug:
