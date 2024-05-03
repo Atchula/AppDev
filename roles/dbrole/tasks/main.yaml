@@ -26,6 +26,6 @@
   register : SqlStatus
   ignore_errors : true
 
-- name : Print SqlStatus
-  ansible.builtin.debug:
-   msg : "{{SqlStatus}}"
+- name : Set Root Password
+  ansible.builtin.command: "mysql_secure_installation --set-root-pass {{mysqlpassword}}"
+  when SqlStatus[failed] is true
