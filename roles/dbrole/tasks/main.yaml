@@ -14,7 +14,7 @@
    state : latest
 
 - name : Connect MySQL Server
-  ansible.builtin.command : "mysql -h {{hostname}} -u{{mysqluser}} -p{{mysqlpassword}}"
+  ansible.builtin.shell : "mysql -h {{hostname}} -u{{mysqluser}} -p{{mysqlpassword}}"
   register : SqlStatus
   ignore_erros : yes
 
